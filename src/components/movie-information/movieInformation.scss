@@ -1,0 +1,20 @@
+.movieInfo-container {
+    width: 100%;
+    height: calc(100vh - 60px);
+    padding: 10%;
+    background: linear-gradient(180deg, #ffbe40 0%, #ffe566 50%, #ffffff 100%);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-items: center;
+
+    .img-container {
+        width: fit-content;
+        height: fit-content;
+    }
+
+    .texts-container {
+        width: 70%;
+        height: fit-content;
+    }
+}

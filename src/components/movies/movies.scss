@@ -1,0 +1,120 @@
+.movies-container {
+    width: 100%;
+    height: 100vh;
+    padding: 0 72px;
+
+    .tabs-container {
+        width: 100%;
+        height: 80px;
+        margin: 10px 0;
+        padding: 0 0 0 50px;
+        display: flex;
+        align-items: center;
+
+        button {
+            position: relative;
+            margin: 0 20px;
+            background: none;
+            border: none;
+            outline: none;
+            font-size: 1.2em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.5s ease-in-out;
+
+            &:hover {
+                color: #4b4b4b;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                background: none;
+                left: 50%;
+                bottom: 0;
+                display: block;
+                height: 2px;
+                width: 0;
+                transition: 0.2s;
+            }
+
+            &:hover:after {
+                background: #4b4b4b;
+                width: 100%;
+                left: 0;
+            }
+        }
+    }
+
+    .movies-list-container {
+        width: 100%;
+        height: fit-content;
+        display: flex;
+        flex-wrap: wrap;
+
+        .loading-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: center;
+            background-color: #00000048;
+
+            .loading {
+                width: 100%;
+                height: fit-content;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 3em;
+                font-weight: bold;
+                color: #fff;
+            }
+
+            .loader {
+                border: 16px solid #f3f3f3;
+                border-top: 16px solid #00000088;
+                border-radius: 50%;
+                width: 120px;
+                height: 120px;
+                animation: spin 2s linear infinite;
+            }
+
+            @keyframes spin {
+                0% {
+                    transform: rotate(0deg);
+                }
+
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .movies-container {
+        padding: 0 20px !important;
+
+        .tabs-container {
+            width: 100%;
+            padding: 0 !important;
+            justify-content: space-evenly;
+
+            button {
+                font-size: 0.8em !important;
+                margin: 0 3px !important;
+                padding: 0 !important;
+            }
+        }
+
+        .movies-list-container {
+            justify-content: center;
+        }
+    }
+}
